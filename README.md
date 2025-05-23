@@ -1,35 +1,35 @@
-# Project 2
+# OOP Creature-City Simulation
 
+## Overview
 
-## Help Received
+This project is a simulation built with object-oriented programming principles such as encapsulation, inheritance, and polymorphism. The system models a city populated by creatures including mice, cats, and zombie cats, each with unique behaviors and interactions within a grid-based layout.
 
-Please document any help you received in completing this lab. Note that the what you submit should be your own work. Refer to the syllabus for more details. 
+## Class Breakdown
 
-[ANSWER HERE]
+### Creature
 
-## Describe your work
+The base class `Creature` serves as the foundation for all creatures in the simulation, including `Mouse` and `Cat`. `ZombieCat` extends `Cat`, demonstrating inheritance, as it modifies cat behavior to adapt to its environment. Creatures are dependent on the `City` class for positioning and visibility, emphasizing encapsulation of their environment.
 
+### Gridpoint
 
-## Part 1: UML Diagram
+The `Gridpoint` class represents locations within the city grid. It manages the coordinates where creatures can spawn and move, using randomized logic to simulate dynamic behavior. Gridpoints interact with `Creature` instances to control spatial distribution and movement.
 
-Note that you must do two tasks here:
+### City
 
-1. Add to your repo a document `UML.png` that is a image of your UML diagram
-2. Update the document `OOP-design.md` that describes your OOP design, referencing your document.
-3. You will receive feedback on your design in a github issue
+The `City` class ties the entire simulation together. It maintains the overall structure, scene, and creature interactions. `City` is associated with both `Creature` and `Gridpoint`, serving as the central hub that brings the simulation to life.
 
-For your final submission, please update `UML.png` with the final UML diagram and `OOP-design.md` with your final description. Below describe the major changes you made.
+## Method: `public void simulate()`
 
-[ANSWER HERE]
+The core method driving the simulation is `simulate()`, implemented within the `City` class. It governs the flow of events, ensuring creatures move and interact across the grid. While primarily connected to the `City`, it indirectly relies on `Creature` and `Gridpoint` to provide context and functionality for simulation events.
 
-## Part 2: Implementation
+## Possible Expansion
 
-What level simulation did you achieve
+A proposed addition is the introduction of a `ZombieMouse` class—an aggressive variant that hunts mice but poisons cats. This would add an extra layer of hierarchy and complexity to the simulation, offering opportunities to further explore polymorphism and behavior-driven inheritance.
 
-Level : [0,1,2,3,4] <-- choose one!
+## Key OOP Principles Demonstrated
 
-If you completed Level 4, describe the additional creature you added to the simulation.
+- **Encapsulation**: Each class controls its own data and behavior.
+- **Inheritance**: ZombieCat extends Cat, which extends Creature.
+- **Polymorphism**: Future additions like ZombieMouse can override or extend behaviors for more dynamic simulation logic.
 
-[ANSWER HERE]
-
-# OOP-Creature-Simulation
+---
